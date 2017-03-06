@@ -33,7 +33,13 @@
 
     <script src="location_data.js"></script>>
     <script>
+     $.getJSON("course_data.json", function(json) {
+     console.log(json);
+     });
 
+     $.getJSON("events_data.json", function(json) {
+     console.log(json);
+     });
     function initMap() {
         var myLatlng = {lat: 36.993770, lng: -122.058924};
 
