@@ -1,220 +1,281 @@
 var UCSC_locations = {
-    'E Baskin': {
+    L1: {lName: "E Baskin",
         center: {lat: 37.000355, lng: -122.063163},
-        population: 2714856
+        population: 0
     },
-    'J Baskin Engr ': 'E Baskin',
 
-    'Soc Sci 1': {
+    L2: {lName: "Soc Sci 1",
         center: {lat: 37.002392, lng: -122.058094},
-        population: 8405837
+        population: 0
     },
-    'Humanities 1': {
+    L3: {lName:"Soc Sci 1",
         center: {lat: 36.998021, lng: -122.054703},
-        population: 3857799
+        population:0
     },
-    'N. Sci Annex': {
+    L4: {lName:"N. Sci Annex",
         center: {lat: 36.998634, lng: -122.061080},
-        population: 603502
+        population: 0
     },
-    'PhysSciences': {
+    L5: {lName:"PhysSciences",
         center: {lat: 36.999689, lng: -122.061783},
-        population: 603502
+        population: 0
     },
-    'Cowell Acad': {
+    L6: {lName:"Cowell Acad",
         center: {lat: 36.996658, lng: -122.054161},
-        population: 603502
+        population:0
     },
-    'Cowell Clrm': 'Cowell Acad',
-    'Soc Sci 2': {
+    L7: {lName:"Soc Sci 2",
         center: {lat: 37.001744, lng: -122.058836},
-        population: 603502
+        population: 0
     },
-    'Oakes Acad': {
+    L8: {lName:"Oakes Acad",
         center: {lat: 36.989070, lng: -122.064392},
-        population: 603502
+        population: 0
     },
-    'Digital Arts': {
+    L9: {lName:"Digital Arts",
         center: {lat: 36.993933, lng: -122.060574},
-        population: 603502
+        population: 0
     },
-    'Bay Tree Conf': {
+    L10: {lName:"Bay Tree Conf D",
         center: {lat: 36.997959, lng: -122.055591},
-        population: 603502
+        population: 0
     },
-    'Bay Tree Conf D': 'Bay Tree Conf',
-    'Merrill Acad': {
+    L11: {lName:"Merrill Acad",
         center: {lat: 36.999566, lng: 122.053073},
-        population: 603502
+        population: 0
     },
 
-    'Earth Marine': {
+    l12: {lName:"Earth Marine",
         center: {lat: 36.998226, lng: -122.059630},
-        population: 603502
+        population:0
     },
 
-    'Engineer 2': {
+    l13: {lName:"Engineer 2",
         center: {lat: 37.000916, lng: -122.063482},
-        population: 603502
+        population: 0
     },
 
-    'McHenry Clrm': {
+    l14: {lName:"McHenry Clrm",
         center: {lat: 36.995989, lng: -122.058894},
-        population: 603502
+        population: 0
     },
-    'Commun Bldg': {
+    l15: {lName:"Commun Bldg",
         center: {lat: 37.001110, lng: -122.061436},
-        population: 603502
+        population: 0
     },
-    'Porter Acad': {
+    l16:{lName:"Porter Acad",
         center: {lat: 36.995972, lng: -122.064801},
-        population: 603502
+        population:0
     },
-    'Hum & Soc Sci': {
+    l17: {lName:"Hum & Soc Sci",
         center: {lat: 36.998427, lng: -122.054865},
-        population: 603502
+        population: 0
     },
-    'Kresge Rec': {
+    l18: {lName:"Kresge Rec",
         center: {lat: 36.997756, lng: -122.066843},
-        population: 603502
+        population:0
     },
-    'Crown Clrm': {
+    l19: {lName:"Crown Clrm",
         center: {lat: 36.999611, lng: -122.054966},
-        population: 603502
+        population: 0
     },
-    'Steven Lib': {
+    l20: {lName:"Steven Lib",
         center: {lat: 36.996545, lng: -122.052064},
-        population: 603502
+        population: 0
     },
-    'Steven Acad': 'Steven Lib',
-    'Merrill': {
+
+    l21: {lName:"Merrill",
         center: {lat: 36.999643, lng: -122.053094},
-        population: 603502
+        population:0
     },
-    'R Carson Acad': {
+    l22: {lName:"R Carson Acad",
         center: {lat: 36.991187, lng: -122.064671},
-        population: 603502
+        population: 0
     },
-    'KresgeAnnex': {
+    l23: {lName:"KresgeAnnex",
         center: {lat: 36.997192, lng: -122.065503},
-        population: 603502
+        population: 0
     },
-    'ClassroomUnit': {
+    l24: {lName:"ClassroomUnit",
         center: {lat: 36.998125, lng: -122.056844},
-        population: 603502
+        population: 0
     },
 
-    'Thim Lecture': {
+    l25: {lName:"Thim Lecture",
         center: {lat: 36.998242, lng: -122.061391},
-        population: 603502
+        population: 0
     },
-    'Media Theater': {
+    l26: {lName:"Media Theater",
         center: {lat: 36.995135, lng: -122.062121},
-        population: 603502
+        population: 0
     },
-    'OPERS Multi Purpose': {
+    l27: {lName:"OPERS Multi Purpose",
         center: {lat: 36.994902, lng: -122.055000},
-        population: 603502
+        population: 0
     },
 
-    'J Bask Aud': {
+    l28: {lName:"J Bask Aud",
         center: {lat: 37.000413, lng: -122.062368},
-        population: 603502
+        population: 0
     },
-    'BiomedSci': {
+    l29: {lName:"BiomedSci",
         center: {lat: 36.999999, lng: -122.061097},
-        population: 603502
+        population: 0
     },
-    'Thimann Lab': {
+    l30: {lName:"Thimann Lab",
         center: {lat: 36.998331, lng: -122.062111},
-        population: 603502
+        population: 0
     },
 
-    'Namaste Lounge': {
+    l31: {lName:"Namaste Lounge",
         center: {lat: 37.000903, lng: -122.057060},
-        population: 603502
+        population: 0
     },
 
-    'Humn Lecture': {
+    l32: {lName:"Humn Lecture",
         center: {lat: 36.998627, lng: -122.054567},
-        population: 603502
+        population: 0
     },
-    'Humn Lecture Hall': 'Humn Lecture',
 
-    'Cowell Press': {
+    l33: {lName:"Cowell Press",
         center: {lat: 36.995977, lng: -122.054825},
-        population: 603502
+        population: 0
     },
 
-    'Cowell Com': {
+    l34: {lName:"Cowell Com",
         center: {lat: 36.997149, lng: -122.055141},
-        population: 603502
+        population: 0
     },
 
-    'MingOng Cmp Lb': {
+    l35: {lName:"MingOng Cmp Lb",
         center: {lat: 36.999961, lng: -122.052371},
-        population: 603502
+        population: 0
     },
 
-    'ISB': {
+    l36: {lName:"ISB",
         center: {lat: 36.998862, lng: -122.059776},
-        population: 603502
+        population: 0
     },
 
-    'Nat Sci': {
+    l37: {lName:"Nat Sci",
         center: {lat: 36.998776, lng: -122.060489},
-        population: 603502
+        population: 0
     },
 
-    'Nat Sci 2': {
+    l38: {lName:"Nat Sci 2",
         center: {lat: 36.998691, lng: -122.060521},
-        population: 603502
+        population: 0
     },
-    'Agroecology': {
+    l39: {lName:"Agroecology",
         center: {lat: 37.000557, lng: -122.057416},
-        population: 603502
+        population: 0
     },
-    ' Barn Theater ': {
+    l40: {lName:"Barn Theater",
         center: {lat: 36.978831, lng: -122.054099},
-        population: 603502
+        population: 0
     },
-    'Music Center': {
+    l41: {lName:"Music Center",
         center: {lat: 36.993403, lng: -122.059971},
-        population: 603502
+        population: 0
     },
 
-    '50 Mtr Pool': {
+    l42: {lName:"50 Mtr Pool",
         center: {lat: 36.994239, lng: -122.055003},
-        population: 603502
+        population: 0
     },
-    'OPERS Conference': '50 Mtr Pool',
-    'East Gym': '50 Mtr Pool',
-    'E Racquet Ct': '50 Mtr Pool',
-    'E Tennis Ct': '50 Mtr Pool',
-    'Dance Studio': '50 Mtr Pool',
-    'East Field': '50 Mtr Pool',
-    'Fitness/Wellness': '50 Mtr Pool',
-    'Martial Arts': '50 Mtr Pool',
-    'Harbor': {
+    l43: {lName:"OPERS Conference",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l44: {lName:"East Gym",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l45: {lName:"E Racquet Ct",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l46: {lName:"E Tennis Ct",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l47: {lName:"E Racquet Ct",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l48: {lName: "Dance Studio",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l49: {lName:"East Field",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l50: {lName:"Fitness/Wellness",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+    l51: {lName:"Martial Arts",
+        center: {lat: 36.994239, lng: -122.055003},
+        population: 0
+    },
+
+    l52: {lName:"Harbor",
         center: {lat: 36.970849, lng: -122.004431},
-        population: 603502
+        population: 0
     },
-    'West Gym': {
+    l53: {lName:"West Gym",
         center: {lat: 36.992409, lng: -122.063963},
-        population: 603502
+        population: 0
     },
-    'Lg Discovery': {
+    l54: {lName:"Lg Discovery",
         center: {lat: 36.951352, lng: -122.065101},
-        population: 603502
+        population: 0
     },
-    'TA Foundry': {
+    l55: {lName:"TA Foundry",
         center: {lat: 36.994864, lng: -122.062143},
-        population: 603502
+        population: 0
     },
-    'TA Offices': 'TA Foundry',
-    'TA 2nd Stage': 'TA Foundry',
-    'TA Mainstage': 'TA Foundry',
-    'TA Lecture': 'TA Foundry',
-    'TA Studio': 'TA Foundry'
+    l56: {lName:"TA Offices",
+        center: {lat: 36.994864, lng: -122.062143},
+        population: 0
+    },
+    l57: {lName:"TA 2nd Stage",
+        center: {lat: 36.994864, lng: -122.062143},
+        population: 0
+    },
+    l58: {lName:"TA Mainstage",
+        center: {lat: 36.994864, lng: -122.062143},
+        population: 0
+    },
+    l59: {lName:"TA Lecture",
+        center: {lat: 36.994864, lng: -122.062143},
+        population: 0
+    },
+    l60: {lName:"TA Studio",
+        center: {lat: 36.994864, lng: -122.062143},
+        population: 0
+    },
+    l61: {lName:"Humn Lecture Hall",
+        center: {lat: 36.998627, lng: -122.054567},
+        population: 0
+    },
+    l62: {lName:"Steven Acad",
+        center: {lat: 36.996545, lng: -122.052064},
+        population: 0
+    },
+    L63: {lName:"Cowell Clrm",
+        center: {lat: 36.996658, lng: -122.054161},
+        population: 0
+    },
+    L64: {lName: "J Baskin Engr",
+        center: {lat: 37.000355, lng: -122.063163},
+        population: 0
+    },
+    L65: {lName:"Bay Tree Conf",
+        center: {lat: 36.997959, lng: -122.055591},
+        population: 0
+    }
+
 };
  //SiliconValleyCtr

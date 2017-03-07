@@ -14,9 +14,15 @@
     <div id="controls" class="nicebox">
       <div>
       <select id="courses-variable">
-        <option value=courses_data>Courses</option>
-        <option value=events_data>Events</option>
+        <option value='Mo'>Monday</option>
+        <option value='Tu'>Tuesday</option>
+        <option value='We'>Wednesday</option>
+        <option value='Th'>Thursday</option>
+        <option value='Fr'>Friday</option>
+        <option value='Sa'>Saturday</option>
+        <option value='Su'>Sunday</option>
       </select>
+
       </div>
       <div id="legend">
         <div id="courses-variable-min">min</div>
@@ -34,6 +40,27 @@
     <script src="location_data.js"></script>>
     <script>
 
+     $.ajaxSetup({
+        async: false
+    });
+     $.getJSON("course_data.json", function(classElement) {
+        var e = document.getElementById("controls");
+        var dayAndTime = e.options[e.selectedIndex].value;
+         $.each(classElement, function(key, val){
+         for (var location in UCSC_locations) {
+             if(val.Class_Location.search(UCSC_locations[location].lName)!=-1&&val.Day_And_Time.search(dayAndTime)){
+                 UCSC_locations[location].population += val.Capacity
+             }
+           }
+        });
+    });
+
+
+     $.getJSON("events_data.json", function(json) {
+     console.log(json);
+     });
+
+
     function initMap() {
         var myLatlng = {lat: 36.993770, lng: -122.058924};
 
@@ -42,24 +69,52 @@
             center: myLatlng
         });
 
+          var populationMin =100;
+          var populationMax =100;
+        for (var location in UCSC_locations) {
 
+          if (UCSC_locations[location].population < populationMin) {
+           populationMin = UCSC_locations[location].population;
+         }
+         if (UCSC_locations[location].population > populationMax) {
+          populationMax = UCSC_locations[location].population;
+           }
+
+        }
+        console.log(populationMin);
+        console.log(populationMax);
         for (var location in UCSC_locations) {
             // Add the circle for positions to the map.
+            var high = [5, 69, 50];  // color of smallest datum
+            var low = [97, 69, 60];   // color of largest datum
+           // delta represents where the value sits between the min and max
+            var delta = (UCSC_locations[location].population-populationMin ) /
+              (populationMax);
+            var color = [];
+            // calculate an integer color based on the delta
+            color[0] = (high[0] - low[0]) * delta*3 + low[0];
+            color[1] = 69;
+            color[2] = 55
+            color='hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)'
+
+
             var locationCircle = new google.maps.Circle({
-                strokeColor: '#FF0000',
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: '#FF0000',
-                fillOpacity: 0.35,
-                map: map,
-                center: UCSC_locations[location].center,
-                radius: 70
+            strokeColor: '#FF300',
+            strokeOpacity: 0.8,
+            strokeWeight: 0.8,
+            fillColor: color,
+            fillOpacity: 0.35,
+            map: map,
+            center: UCSC_locations[location].center,
+            radius: 70
+
             });
+//            console.log(UCSC_locations[location].lName);
+            console.log(UCSC_locations[location].population)
         }
     }
 
 //'https://raw.githubusercontent.com/77ahh/CE263_Final/master/all_data_3.json'
-
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiRRPyv19TADLDHpnAdMEpO5ORBtM7iYo&callback=initMap">
