@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UCSC Courses and Events</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script src="jquery-3.1.1.js"></script>
+    <!--<script type="text/javascript" src="https://raw.githubusercontent.com/77ahh/CE263_Final/master/all_data_3.json"></script>  -->
+
+  </head>
+
+  <body>
+    <div id="controls" class="box">
+      <div>
+      <select id="courses-variable">
+        <option value= "nouse" selected="selected">--Select class by Date--</option>
+        <option value= "">All days</option>
+        <option value="Mo">Monday</option>
+        <option value="Tu">Tuesday</option>
+        <option value="We">Wednesday</option>
+        <option value="Th">Thursday</option>
+        <option value="Fr">Friday</option>
+        <option value="Sa">Saturday</option>
+      </select>
+      <select id="start-time">
+        <option value=0 selected="selected">--Start after--</option>
+        <option value=7>07:00AM</option>
+        <option value=8>08:00AM</option>
+        <option value=9>09:00AM</option>
+        <option value=10>10:00AM</option>
+        <option value=11>11:00AM</option>
+        <option value=12>12:00PM</option>
+        <option value=13>01:00PM</option>
+        <option value=14>02:00PM</option>
+        <option value=15>03:00PM</option>
+        <option value=16>04:00PM</option>
+        <option value=17>05:00PM</option>
+        <option value=18>06:00PM</option>
+        <option value=19>07:00PM</option>
+        <option value=20>08:00PM</option>
+      </select>
+      <select id="end-time">
+        <option value=99 selected="selected">--End by--</option>
+        <option value=9>09:00AM</option>
+        <option value=10>10:00AM</option>
+        <option value=11>11:00AM</option>
+        <option value=12>12:00AM</option>
+        <option value=13>01:00PM</option>
+        <option value=14>02:00PM</option>
+        <option value=15>03:00PM</option>
+        <option value=16>04:00PM</option>
+        <option value=17>05:00PM</option>
+        <option value=18>06:00PM</option>
+        <option value=19>07:00PM</option>
+        <option value=20>08:00PM</option>
+        <option value=21>09:00PM</option>
+        <option value=22>10:00PM</option>
+      </select>
+      <button type="button" class="btn btn-default btn-lg">Show events</button>
+      </div>
+    </div>
+
+    <div class="nicebox">
+      <div id="legend">
+        <div id="census-min">min</div>
+        <div class="color-key"><span id="data-caret">&#x25c6;</span></div>
+        <div id="census-max">max</div>
+      </div>
+    </div>
+
+    <div id="data-box" class="nicebox">
+      <label id="data-label" for="data-value"></label>
+      <span id="data-value"></span>
+    </div>
+    
+
+
+    <div id="map"></div>
+
+
+    <script src="location_data.js"></script>>
+    <script>
+     var dayValue = document.getElementById("courses-variable").value;
+     var startTime = document.getElementById("start-time").value;
+     var endTime = document.getElementById("end-time").value;
+     $.ajaxSetup({
+        async: false
+    });
+//     $.getJSON("events_data.json", function(json) {
+//     console.log(json);
+//     });
+
+    //Create the map
+    function initMap() {
+        var myLatlng = {lat: 36.993770, lng: -122.058924};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: myLatlng,
+            styles: [
+              {
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#ebe3cd"
+                  }
+                ]
+              },
+              {
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#523735"
+                  }
+                ]
+              },
+              {
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                  {
+                    "color": "#f5f1e6"
+                  }
+                ]
+              },
+              {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                  {
+                    "color": "#c9b2a6"
+                  }
+                ]
+              },
+              {
+                "featureType": "administrative.land_parcel",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                  {
+                    "color": "#dcd2be"
+                  }
+                ]
+              },
+              {
+                "featureType": "administrative.land_parcel",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#ae9e90"
+                  }
+                ]
+              },
+              {
+                "featureType": "landscape.natural",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#dfd2ae"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#dfd2ae"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#93817c"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.park",
+                "elementType": "geometry.fill",
+                "stylers": [
+                  {
+                    "color": "#a5b076"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.park",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#447530"
+                  }
+                ]
+              },
+              {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#f5f1e6"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.arterial",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#fdfcf8"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#f8c967"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                  {
+                    "color": "#e9bc62"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway.controlled_access",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#e98d58"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway.controlled_access",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                  {
+                    "color": "#db8555"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#806b63"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit.line",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#dfd2ae"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit.line",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#8f7d77"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit.line",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                  {
+                    "color": "#ebe3cd"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit.station",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#dfd2ae"
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [
+                  {
+                    "color": "#b9d3c2"
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#92998d"
+                  }
+                ]
+              }
+            ]
+        });
+
+    //If "courses-variable" changes, delete all circles and create new ones
+       google.maps.event.addDomListener(document.getElementById("courses-variable"), 'change', function() {
+       dayValue = document.getElementById("courses-variable").value;
+       for(var ii in UCSC_locations){
+           UCSC_locations[ii].population = 0;
+           UCSC_locations[location].classes = {}
+       }
+       for(var i in window.allCircles) {
+            window.allCircles[i].setMap(null);
+       }
+       getData(dayValue,startTime,endTime);
+       if (map.getZoom() === 15) {
+           createCircle(70)
+       }
+       else if (map.getZoom() === 16) {
+           createCircle(40)
+       }
+       else if (map.getZoom() === 17) {
+           createCircle(25)
+       }
+       else{
+           createCircle(70)
+       }
+
+     });
+
+    //If "start-time" changes, delete all circles and create new ones
+       google.maps.event.addDomListener(document.getElementById("start-time"), 'change', function() {
+       startTime = document.getElementById("start-time").value;
+       for(var ii in UCSC_locations){
+           UCSC_locations[ii].population = 0;
+           UCSC_locations[location].classes = {}
+       }
+       for(var i in window.allCircles) {
+            window.allCircles[i].setMap(null);
+       }
+       getData(dayValue,startTime,endTime);
+       if (map.getZoom() === 15) {
+           createCircle(70)
+       }
+       else if (map.getZoom() === 16) {
+           createCircle(40)
+       }
+       else if (map.getZoom() === 17) {
+           createCircle(25)
+       }
+       else{
+           createCircle(70)
+       }
+     });
+
+       google.maps.event.addDomListener(document.getElementById("end-time"), 'change', function() {
+       endTime = document.getElementById("end-time").value;
+       for(var ii in UCSC_locations){
+           UCSC_locations[ii].population = 0
+           UCSC_locations[location].classes = {};
+       }
+       for(var i in window.allCircles) {
+            window.allCircles[i].setMap(null);
+       }
+       getData(dayValue,startTime,endTime);
+       if (map.getZoom() === 15) {
+           createCircle(70)
+       }
+       else if (map.getZoom() === 16) {
+           createCircle(40)
+       }
+       else if (map.getZoom() === 17) {
+           createCircle(25)
+       }
+       else{
+           createCircle(70)
+       }
+     });
+
+    // If zoom changes, delete all circles and create new ones
+       google.maps.event.addListener(map, 'zoom_changed', function() {
+           if(map.getZoom()<=17) {
+               for (var i in window.allCircles) {
+                   window.allCircles[i].setMap(null);
+               }
+               window.allCircles = [];
+               if (map.getZoom() === 15) {
+                   createCircle(70)
+               }
+               else if (map.getZoom() === 16) {
+                   createCircle(40)
+               }
+               else if (map.getZoom() === 17) {
+                   createCircle(25)
+               }
+               else{
+                   createCircle(70)
+               }
+           }
+    });
+
+
+
+    // Keep track of the min and max of population in the selected time.
+        var populationMin =5;
+        var populationMax =5;
+        for (var location in UCSC_locations) {
+            if(UCSC_locations[location].population>0) {
+                if (UCSC_locations[location].population < populationMin) {
+                    populationMin = UCSC_locations[location].population;
+                }
+                if (UCSC_locations[location].population > populationMax) {
+                    populationMax = UCSC_locations[location].population;
+                }
+            }
+        }
+
+        function createCircle(rr) {
+            window.allCircles = [];
+            var high = [5, 69, 50];  // color of smallest datum
+            var low = [97, 69, 60];   // color of largest datum
+            // delta represents where the value sits between the min and max
+
+            for (var location in UCSC_locations) {
+              if(UCSC_locations[location].population>0) {
+                var delta = (UCSC_locations[location].population - populationMin ) /
+                    (populationMax);
+                var color = [];
+                if (low[0] - (high[0] - low[0]) * delta * 3 >= low[0]) {
+                    color[0] = low[0] - (high[0] - low[0]) * delta * 3;
+                }
+                else {
+                    color[0] = high[0]
+                }
+                color[1] = 69;
+                color[2] = 55;
+                color = 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)';
+                var locationCircle = new google.maps.Circle({
+                    strokeColor: '#FF300',
+                    strokeOpacity: 0.7,
+                    strokeWeight: 0.8,
+                    fillColor: color,
+                    fillOpacity: 0.35,
+                    map: map,
+                    center: UCSC_locations[location].center,
+                    radius: rr,
+                    information: UCSC_locations[location],
+                    infowindow: new google.maps.InfoWindow({
+                    content: JSON.stringify(UCSC_locations[location].population),
+                    position: UCSC_locations[location].center
+                    })
+                });
+
+                window.allCircles.push(locationCircle)
+
+                google.maps.event.addListener(locationCircle, 'mouseover', function () {
+                    this.infowindow.open(map,this)
+                });
+
+                google.maps.event.addListener(locationCircle, 'mouseout', function(event) {
+                    this.infowindow.close(map,this)
+                });
+            }
+        }
+
+        }
+    }
+
+         getData = function(a,b,c){
+          var temp = {};
+         $.getJSON("data3333333333.json", function (classElement) {
+             $.each(classElement, function (key, val) {
+                 if (val.Day_And_Time.search(a) != -1 && val.starttime>=b && val.endtime<=c){
+                     for (var location in UCSC_locations) {
+                         if (val.Class_Location.search(UCSC_locations[location].Location) != -1){
+                             UCSC_locations[location].population += val.Capacity;
+                             temp[val.Subject+"   "+val.Class_Number + "   " + val.Class_name] = val.Day_And_Time;
+                             UCSC_locations[location].classes= $.extend({}, temp)
+                         }
+                     }
+
+                 }
+             })
+         });
+//             console.log(UCSC_locations)
+
+     }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiRRPyv19TADLDHpnAdMEpO5ORBtM7iYo&callback=initMap">
+    </script>
+  </body>
+</html>
+
