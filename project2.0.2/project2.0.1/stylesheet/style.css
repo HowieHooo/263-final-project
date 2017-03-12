@@ -16,7 +16,7 @@ html, body, #map { height: 100%; margin: 0; padding: 0; overflow: hidden; }
           z-index: 5;
           width: 200px;
           height: 50px;
-          padding-left: 100px;
+
           /*background: rgb(255,255,255);*/
           /*background: linear-gradient(to bottom,rgba(255,255,255,1) 0%,rgba(245,245,245,1) 100%);*/
           /*border: rgb(229, 229, 229) 1px solid;*/
@@ -30,24 +30,22 @@ html, body, #map { height: 100%; margin: 0; padding: 0; overflow: hidden; }
         #courses-variable {
           width: 150px;
           height: 50px;
-          margin-left: -30px;
-          margin-top: 20px;
 
         }
         #time-variable {
           width: 150px;
           height: 50px;
-          margin-left: -30px;
+
         }
         #start-time{
           width: 150px;
           height: 50px;
-          margin-left: -30px;
+
         }
         #end-time{
           width: 150px;
           height: 50px;
-          margin-left: -30px;
+
         }
         #legend { 
           display: flex; 
