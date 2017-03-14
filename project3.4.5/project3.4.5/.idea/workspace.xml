@@ -14,40 +14,63 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="778" column="28" lean-forward="true" selection-start-line="778" selection-start-column="28" selection-end-line="778" selection-end-column="28" />
+              <folding>
+                <marker date="1489479720000" expanded="true" signature="421:495" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stylesheet/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>creatMark</find>
-      <find>checkbox</find>
-      <find>on-off-switch-label</find>
-      <find>Soc Sci</find>
-      <find>Soc Sci 1</find>
-      <find>window.allMarkers</find>
-      <find>dataCleared</find>
-      <find>map</find>
-      <find>time-variable</find>
-      <find>data-caret</find>
-      <find>courses-variable</find>
-      <find>right-botton</find>
-      <find>a.style.display = 'none';</find>
-      <find>var b = document.getElementById(&quot;start-time&quot;);</find>
-      <find>show-classes</find>
-      <find>sideNav</find>
-      <find>classes</find>
-      <find>showNavinfo</find>
-      <find>button-collapse</find>
-      <find>side-nav</find>
-      <find>data-activates</find>
-      <find>slide-out</find>
-      <find>slide-</find>
-      <find>img.src</find>
-      <find>img</find>
-      <find>locationcircle</find>
-      <find>showEvents</find>
-      <find>clearMarkers</find>
-      <find>clearData</find>
-      <find>creatMarker</find>
+      <find>lat: 37.000355, lng: -122.063163</find>
+      <find>lat: 36.994239, lng: -122.055003</find>
+      <find>lat: 36.996545, lng: -122.052064</find>
+      <find>Steven</find>
+      <find>lat: 36.996658, lng: -122.054161</find>
+      <find>Cowell</find>
+      <find>lat: 36.998627, lng: -122.054567</find>
+      <find>Humn Lecture</find>
+      <find>lat: 36.994864, lng: -122.062143</find>
+      <find>36.993403, lng: -122.059971</find>
+      <find>36.978831, lng: -122.054099</find>
+      <find>37.000557, lng: -122.057416</find>
+      <find>36.998776, lng: -122.060489</find>
+      <find>36.997149, lng: -122.055141</find>
+      <find>36.998627, lng: -122.054567</find>
+      <find>36.999999, lng: -122.061097</find>
+      <find>37.000413, lng: -122.062368</find>
+      <find>36.994902, lng: -122.055000</find>
+      <find>36.998125, lng: -122.056844</find>
+      <find>36.997192, lng: -122.065503</find>
+      <find>36.999643, lng: -122.053094</find>
+      <find>lat: 36.999611, lng: -122.054966</find>
+      <find>lat: 36.997756, lng: -122.066843</find>
+      <find>lat: 36.998427, lng: -122.054865</find>
+      <find>Hum &amp; Soc Sci</find>
+      <find>36.995972, lng: -122.064801</find>
+      <find>36.995989, lng: -122.058894</find>
+      <find>36.999566, lng: 122.053073</find>
+      <find>37.001744, lng: -122.058836</find>
+      <find>36.996658, lng: -122.054161</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -62,8 +85,9 @@
         <option value="$PROJECT_DIR$/stylesheet/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/../Project1 2 2/location.html" />
         <option value="$PROJECT_DIR$/stylesheet/style.css" />
-        <option value="$PROJECT_DIR$/script/location_data.js" />
+        <option value="$PROJECT_DIR$/../project3.4.2 2/index.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/script/location_data.js" />
       </list>
     </option>
   </component>
@@ -385,7 +409,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1489479720000" expanded="true" signature="421:495" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1489479720000" expanded="true" signature="421:495" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1489479720000" expanded="true" signature="421:495" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -400,7 +446,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1489479720000" expanded="true" signature="421:495" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -471,23 +519,35 @@
     <entry file="file://$PROJECT_DIR$/../project2.0.1 copy/index.html" />
     <entry file="file://$PROJECT_DIR$/stylesheet/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="166" column="37" lean-forward="false" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
+        <state relative-caret-position="534">
+          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../project3.4.2 2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="558" column="37" lean-forward="false" selection-start-line="558" selection-start-column="37" selection-end-line="558" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/location_data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4446">
-          <caret line="247" column="22" lean-forward="true" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
+        <state relative-caret-position="200">
+          <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="534" column="51" lean-forward="true" selection-start-line="534" selection-start-column="51" selection-end-line="534" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="209">
+          <caret line="778" column="28" lean-forward="true" selection-start-line="778" selection-start-column="28" selection-end-line="778" selection-end-column="28" />
+          <folding>
+            <marker date="1489479720000" expanded="true" signature="421:495" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
