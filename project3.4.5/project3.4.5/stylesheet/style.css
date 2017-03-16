@@ -173,4 +173,10 @@ html, body, #map { height: 100%; margin: 0; padding: 0; overflow: hidden; }
         #slide-out{
             background-color:#e6ffcc;
         }
+        #events-title{
+          display: none;
+        }
+        .select p{
+          margin-bottom: -7px;
+        }
 

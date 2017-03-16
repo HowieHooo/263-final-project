@@ -11,7 +11,9 @@
    </head>
    <body>
       <div class="page-header">
-         <h1><strong>What classes can we take in UCSC for our free time</strong></h1>
+         <h2><strong>What classes can we take in UCSC for our free time</strong></h2>
+         <h5 id="class-title"><center>Start from Apr 3, end by Jun 15</center></h5>
+         <h5 id="events-title"><center>All 2017 year</center></h5>
       </div>
       <div id="map"></div>
       <div id="controls" class="box">
@@ -31,8 +33,9 @@
             </div>
          </div>
          <div class="select">
+         	<p id="select_p1">Select a day: </p>
             <select id="courses-variable" class="browser-default">
-               <option value="HAHAHAHA" selected="selected">Select a day</option>
+               <option value="HAHAHAHA" selected="selected">click to select</option>
                <option value= "">All days </option>
                <option value="Mo">Monday</option>
                <option value="Tu">Tuesday</option>
@@ -41,8 +44,9 @@
                <option value="Fr">Friday</option>
                <option value="Sa">Saturday</option>
             </select>
+            <p id="select_p2">Start time: </p>
             <select id="start-time" class="browser-default">
-               <option value=0 selected="selected">Start after: Any</option>
+               <option value=0 selected="selected">click to select</option>
                <option value=7>07:00AM</option>
                <option value=8>08:00AM</option>
                <option value=9>09:00AM</option>
@@ -58,8 +62,9 @@
                <option value=19>07:00PM</option>
                <option value=20>08:00PM</option>
             </select>
+            <p id="select_p3">End time: </p>
             <select id="end-time" class="browser-default">
-               <option value=99 selected="selected">End by: Any</option>
+               <option value=99 selected="selected">click to select</option>
                <option value=9>09:00AM</option>
                <option value=10>10:00AM</option>
                <option value=11>11:00AM</option>
@@ -76,7 +81,7 @@
                <option value=22>10:00PM</option>
             </select>
             <a class="waves-effect waves-light btn"  onclick="showEvents()" id = "show-events">Show events</a>
-            <a class="waves-effect waves-light btn"  onclick="showClasses()" id = "show-classes">Show classes</a>
+         <a class="waves-effect waves-light btn"  onclick="showClasses()" id = "show-classes">Show classes</a>
          </div>
       </div>
       <ul id="slide-out" class="side-nav">
@@ -87,10 +92,13 @@
          <div id = "credit">
             <a></a>
          </div>
-         <div id="credit-text">
-            <a>If I finish my class at 10 am, it’s too early for lunch and I want to know if there are any interesting classes or events that I can join now, maybe there's an art class or an event just nearby.
-             So, we built this visualization to help us make the decision.
-            </a>
+         <div class="container">
+	         <div id="credit-text">
+	         </div>
+	         	<h4><center>Credits</center></h4>
+	            <p>If I finish my class at 10 am, it’s too early for lunch and I want to know if there are any interesting classes or events that I can join now, maybe there's an art class or an event just nearby. So, we built this visualization to help us make the decision.
+	            </p>
+	         </div>
          </div>
 
       </div>
@@ -385,10 +393,20 @@
                       var b = document.getElementById("start-time");
                       var c = document.getElementById("end-time");
                       var d = document.getElementById("legend");
+                      var e = document.getElementById("class-title")
+                      var f = document.getElementById("events-title")
+                      var g = document.getElementById("select_p1")
+                      var h = document.getElementById("select_p2")
+                      var i = document.getElementById("select_p3")
                       a.style.display = 'block';
                       b.style.display = 'block';
                       c.style.display = 'block';
                       d.style.display = 'block';
+                      e.style.display = 'block';
+                      f.style.display = 'none';
+                      g.style.display = 'block';
+                      h.style.display = 'block';
+                      i.style.display = 'block';
                       if(dataCleared) {
                           getData(dayValue, startTime, endTime);
                           if (map.getZoom() === 15) {
@@ -812,10 +830,20 @@
                                   var b = document.getElementById("start-time");
                                   var c = document.getElementById("end-time");
                                   var d = document.getElementById("legend");
+                                  var e = document.getElementById("class-title")
+                                  var f = document.getElementById("events-title")
+                                  var g = document.getElementById("select_p1")
+                                  var h = document.getElementById("select_p2")
+                                  var i = document.getElementById("select_p3")
                                   a.style.display = 'none';
                                   b.style.display = 'none';
                                   c.style.display = 'none';
                                   d.style.display = 'none';
+                                  e.style.display = 'none';
+                                  f.style.display = 'block';
+                                  g.style.display = 'none';
+                                  h.style.display = 'none';
+                                  i.style.display = 'none';
                                   dataCleared = 1;
                                   markerCleared=0;
                                   creatMarker();
